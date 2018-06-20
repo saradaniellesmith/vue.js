@@ -31,39 +31,45 @@
        We are stoked to have you here - let's get started!
      </p>
 
- 
+     <first-component v-if="myBoolean"/>
+     
   </div>
 </template>
 
 <script>
+import FirstComponent from "./components/FirstComponent";
+
 export default {
   data() {
     return {
-      user : {
-        username: '',
-        firstname: '',
-        lastname: '',
-        email: '',
-        password: ''
+      user: {
+        username: "",
+        firstname: "",
+        lastname: "",
+        email: "",
+        password: ""
       },
       myBoolean: true
-    }
+    };
   },
   methods: {
-   toggleBoolean() {
-     this.myBoolean = !this.myBoolean
+    toggleBoolean() {
+      this.myBoolean = !this.myBoolean;
     }
+  },
+  components: {
+    FirstComponent: FirstComponent
   }
-}
+};
 </script>
 
 <style>
-
 #app {
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 </style>
